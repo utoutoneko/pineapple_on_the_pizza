@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pineapple on the ◉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- TITLE -->
+  <div id="screen-title" class="screen active">
+    <div class="ad-banner">AD BANNER (広告枠)</div>
+    <div class="logo-wrap">
+      <div class="pizza-badge"><span>🍕</span></div>
+      <h1>Pineapple<br>on the <span class="circ">◉</span></h1>
+      <div class="tagline">パイナップルをピザに乗せる方法は100通りある</div>
+    </div>
+    <button class="btn" id="btnStart">はじめる</button>
+    <button class="btn secondary" id="btnAchievements">🔍 実績</button>
+    <div class="social-row">
+      <a class="social-pill" href="https://x.com/utoutonek0" target="_blank" rel="noopener">𝕏 作者をフォロー</a>
+      <a class="social-pill" href="https://www.youtube.com/@utoutoneko" target="_blank" rel="noopener">▶ YouTube</a>
+    </div>
+    <div class="save-hint" id="saveHint">セーブデータを読み込み中…</div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div id="screen-achievements" class="screen">
+    <div class="select-header">
+      <h2>🔍 隠し実績</h2>
+      <div class="ach-progress" id="achProgress">0 / 0 発見</div>
+    </div>
+    <div class="ach-list" id="achList"></div>
+    <div class="select-footer">
+      <button class="btn secondary" id="btnAchBack">タイトルへ</button>
+    </div>
+  </div>
+
+  <!-- STAGE SELECT -->
+  <div id="screen-select" class="screen">
+    <div class="select-header">
+      <h2>STAGE SELECT</h2>
+    </div>
+    <div class="select-scroll" id="stageScroll"></div>
+    <div class="select-footer">
+      <button class="btn secondary" id="btnBackToTitle">タイトルへ</button>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div id="screen-game" class="screen">
+    <div class="topbar">
+      <div class="iconbtn" id="btnRestart">⟲</div>
+      <div class="stagelabel" id="stageLabel">STAGE</div>
+      <div class="iconbtn" id="btnSettings">⚙</div>
+    </div>
+    <div class="hint" id="hintText">ヒント</div>
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="480" height="480"></canvas>
+      <div class="powerbar-wrap" id="powerbarWrap">
+        <div class="powerbar-redzone" id="powerRedzone"></div>
+        <div class="powerbar-fill" id="powerbarFill" style="height:0%"></div>
+      </div>
+    </div>
+
+    <div id="clearOverlay">
+      <div class="clear-card">
+        <h2 id="clearTitle">CLEAR!</h2>
+        <div class="clear-stars" id="clearStars">★★★</div>
+        <div class="clear-time" id="clearTime">TIME 0.0s</div>
+        <div class="hidden-badge" id="hiddenBadge" style="display:none;">🔍 隠し実績を発見!</div>
+        <div class="clear-btns">
+          <button class="btn secondary" id="btnClearRestart">リトライ</button>
+          <button class="btn secondary" id="btnClearTitle">STAGE選択</button>
+          <button class="btn" id="btnClearNext">つぎへ ▶</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="settingsOverlay">
+      <div class="settings-card">
+        <h3>SETTINGS</h3>
+        <button class="btn secondary" id="btnResume">ゲームに戻る</button>
+        <button class="btn secondary" id="btnSettingsRestart">このSTAGEをリスタート</button>
+        <button class="btn secondary" id="btnSettingsTitle">STAGE選択へ</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
